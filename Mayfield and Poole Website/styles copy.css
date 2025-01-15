@@ -1,0 +1,263 @@
+/* Page Wrapper */
+#page-container {
+    max-width: 1200px; /* Limit page to 1500px wide */
+    width: 100%; /* Allow it to scale down for smaller screens */
+    margin: 0 auto; /* Center the page horizontally */
+    padding: 0 20px; /* Add padding on the sides for spacing */
+    box-sizing: border-box; /* Include padding in width calculations */
+    background-color: #e5e6eb;
+}
+
+/* Global Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #e5e6eb; /* Light gray background */
+}
+
+/* Page Wrapper */
+#page-container {
+    min-height: 100%; /* Ensure full height */
+    display: flex;
+    flex-direction: column; /* Stack header, main, footer */
+}
+
+/* Header */
+header {
+    background-color: #e5e6eb;/* Dark header background */
+    color: #0a0c22; /* Light text */
+    padding: 10px 20px; /* Add space around header */
+    display: flex; /* Flex layout */
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Center items vertically */
+    position: relative; /* Needed for dropdown positioning */
+}
+
+/* Logo */
+#logo {
+    height: 30%; /* Set logo height */
+    width: auto; /* Maintain aspect ratio */
+    padding-left: 5%;
+}
+
+/* Title */
+header h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5rem; /* Set font size */
+    flex-grow: 1; /* Push title to use available space */
+    text-align: left; /* Align text to the left */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+}
+
+/* Menu Button */
+#menu-button {
+    width: 50px; /* Set button size */
+    height: auto; /* Set button size */
+    background: url('images/menu.png') no-repeat center center / contain; /* Add menu icon */
+    border: 10px solid #0a0c22; /* Add border for contrast */
+    background-color: #0a0c22; /* Dark background for visibility */
+    border-radius: 10%; /* Round button */
+    cursor: pointer; /* Show pointer on hover */
+}
+
+/* Header Navigation Menu (Desktop) */
+#nav-menu {
+    display: flex; /* Inline layout for desktop */
+    gap: 20px; /* Space between menu items */
+    list-style: none; /* Remove bullet points if using <ul>/<li> */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+}
+
+/* Navigation Links */
+#nav-menu a {
+    text-decoration: none; /* Remove underline */
+    color: #fff; /* Light text for contrast */
+    padding: 10px 15px; /* Add padding for clickable area */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #0a0c22; /* Button-like appearance */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover and active effects */
+    font-size: 1rem; /* Set font size */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Hover and Active Effects */
+#nav-menu a:hover {
+    background-color: #555; /* Slightly darker background on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+#nav-menu a:active {
+    background-color: #666; /* Darker background when clicked */
+    transform: scale(1); /* Reset size when clicked */
+}
+
+/* Optional Alignment for Links */
+#nav-menu {
+    justify-content: flex-end; /* Align links to the right side */
+    align-items: center; /* Vertically align links */
+}
+
+/* Dropdown Menu */
+#dropdown-menu {
+    display: flex; /* Set flex layout for vertical stacking */
+    flex-direction: column;
+    gap: 50px;
+    background-color: #333; /* Match header background */
+    position: absolute; /* Position relative to the header */
+    top: 100%; /* Position below the header */
+    left: 0; /* Align with the left edge */
+    width: 100%; /* Full width of the viewport */
+    max-height: 0; /* Initially collapsed */
+    overflow: hidden; /* Hide content overflow during animation */
+    padding: 0; /* Remove padding initially */
+    box-sizing: border-box; /* Include padding in size calculations */
+    transition: max-height 0.4s ease, padding 0.4s ease; /* Smooth slide-down effect */
+    z-index: 1000; /* Ensure visibility above other elements */
+}
+
+/* Show dropdown menu when "open" class is added */
+#dropdown-menu.open {
+    max-height: 300px; /* Adjust based on content size */
+    padding: 15px; /* Add padding during expansion */
+}
+
+
+/* Dropdown Links */
+#dropdown-menu a {
+    display: block; /* Full width clickable links */
+    padding: 10px 20px; /* Add space around links */
+    color: white; /* Light text for contrast */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center align text */
+    background-color: #444; /* Default background */
+    margin: 5px 0;
+    border-radius: 12px;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+#dropdown-menu a:hover {
+    background-color: #555; /* Darker background on hover */
+}
+
+/* Show Dropdown */
+#dropdown-menu.open {
+    display: flex; /* Show the menu */
+}
+
+/* Main Content */
+main {
+    flex: 1; /* Allow main content to grow */
+    padding: 20px; /* Add padding around the content */
+    text-align: center; /* Center align text */
+    background-color: #e5e6eb; /* White background for contrast */
+}
+
+/* Footer */
+footer {
+    background-color: #0a0c22; /* Match header */
+    color: white; /* Light text */
+    text-align: center; /* Center align text */
+    padding: 10px 20px; /* Add padding */
+    font-size: 0.9rem; /* Smaller text */
+}
+
+/* Menu Button (Mobile) */
+#menu-button {
+    display: none; /* Hidden by default */
+}
+
+
+/* Show Menu Button on Mobile */
+@media (max-width: 768px) {
+    #menu-button {
+        display: block; /* Show the menu button */
+    }
+}
+
+/* Navigation Menu (Desktop) */
+#nav-menu {
+    display: flex; /* Show inline menu on desktop */
+    gap: 15px; /* Space between menu items */
+}
+
+/* Hide Navigation Menu on Mobile */
+@media (max-width: 768px) {
+    #nav-menu {
+        display: none; /* Hide inline menu on mobile */
+    }
+}
+
+/* Flex Container for Owners */
+#owners-container {
+    display: flex; /* Enable Flexbox */
+    gap: 20px; /* Add space between items */
+    justify-content: center; /* Center items horizontally */
+    align-items: flex-start; /* Align items at the top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin: 20px 0; /* Add vertical spacing */
+}
+
+/* Individual Owner Box */
+.owner-box {
+    background-color: #f9f9f9; /* Light background for contrast */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Space inside the box */
+    width: 300px; /* Fixed width for consistency */
+    text-align: center; /* Center content inside the box */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Owner Box Hover Effect */
+.owner-box:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Owner Images */
+.owner-image {
+    width: 300px; /* Full width of the box */
+    height: 300px; /* Maintain aspect ratio */
+    border-radius: 5%; /* Circular images */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #owners-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center-align items */
+    }
+
+    .owner-box {
+        width: 90%; /* Reduce width to fit smaller screens */
+    }
+}
+
+header h3 {
+    text-align: center;
+    margin-top: 50%;
+}
+
+/* Map Container Styling */
+#map {
+    height: 400px; /* Set map height */
+    width: 100%; /* Full width */
+    max-width: 800px; /* Optional: Limit map's width */
+    margin: 0 auto; /* Center horizontally */
+    border: 1px solid #ddd; /* Optional: Add a border for visual emphasis */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+    margin-bottom: 5%;
+}
+
+section s2 {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Center-align text inside the section */
+}

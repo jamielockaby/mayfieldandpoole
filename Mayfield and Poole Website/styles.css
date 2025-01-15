@@ -1,0 +1,224 @@
+/* Global Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #e5e6eb; /* Light gray background */
+}
+
+/* Page Wrapper */
+#page-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto; /* Center the page horizontally */
+    padding: 0 20px; /* Add padding on the sides */
+    box-sizing: border-box; /* Include padding in width calculations */
+    background-color: #e5e6eb;
+    min-height: 100%; /* Ensure full height */
+    display: flex;
+    flex-direction: column; /* Stack header, main, footer */
+}
+
+/* Header */
+header {
+    background-color: #e5e6eb;
+    color: #0a0c22; /* Dark text */
+    padding: 10px 20px; /* Space around header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* For dropdown positioning */
+}
+
+/* Logo */
+#logo {
+    height: 30%; /* Logo height */
+    width: auto; /* Maintain aspect ratio */
+    padding-left: 5%;
+}
+
+#Rheem_logo {
+    height: 100px; /* Logo height */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Header Title */
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    flex-grow: 1;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden; /* Hide overflow */
+}
+
+/* Menu Button (Mobile) */
+#menu-button {
+    display: none; /* Hidden by default */
+    width: 50px;
+    background: url('images/menu.png') no-repeat center center / contain;
+    border: 10px solid #0a0c22; /* Border for visibility */
+    background-color: #0a0c22;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+/* Show Menu Button on Mobile */
+@media (max-width: 768px) {
+    #menu-button {
+        display: block; /* Show on mobile */
+    }
+}
+
+/* Navigation Menu (Desktop) */
+#nav-menu {
+    display: flex;
+    gap: 20px; /* Space between items */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#nav-menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #0a0c22;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+#nav-menu a:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+#nav-menu a:active {
+    background-color: #666;
+    transform: scale(1);
+}
+
+/* Hide Navigation Menu on Mobile */
+@media (max-width: 768px) {
+    #nav-menu {
+        display: none;
+    }
+}
+
+/* Dropdown Menu */
+#dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #5e6175;
+    position: absolute;
+    border-radius: 4%;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    box-sizing: border-box;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    z-index: 1000;
+}
+
+#dropdown-menu.open {
+    max-height: 300px;
+    padding: 15px;
+}
+
+#dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    background-color: #444;
+    margin: 5px 0;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+#dropdown-menu a:hover {
+    background-color: #555;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    background-color: #e5e6eb;
+}
+
+/* Footer */
+footer {
+    background-color: #0a0c22;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+/* Flex Container for Owners */
+#owners-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.owner-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.owner-box:hover {
+    transform: scale(1.05);
+}
+
+.owner-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Map Container Styling */
+#map {
+    height: 300px;
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #owners-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .owner-box {
+        width: 90%;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Mayfield and Poole</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <div id="page-container">
+        <header>
+            <img src="images/Logo.jpg" id="logo" alt="Mayfield and Poole Logo">
+            <nav id="nav-menu">
+                <a href="main.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <img src="images/menu.png" id="menu-button" alt="Menu" onclick="toggleMenu()">
+            <div id="dropdown-menu">
+                <nav>
+                    <a href="main.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section>
+                <h2>Meet Our Founders</h2>
+                <div id="owners-container">
+                    <!-- Sonny Mayfield Section -->
+                    <div class="owner-box">
+                        <img src="images/sonny-mayfield.jpg" alt="Sonny Mayfield" class="owner-image">
+                        <h3>Sonny Mayfield</h3>
+                        <p>Sonny is a co-founder of Mayfield & Poole with over 20 years of experience in the industry.</p>
+                    </div>
+
+                    <!-- Benji Poole Section -->
+                    <div class="owner-box">
+                        <img src="images/benji-poole.jpg" alt="Benji Poole" class="owner-image">
+                        <h3>Benji Poole</h3>
+                        <p>Benji is a co-founder of Mayfield & Poole, dedicated to delivering outstanding services.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 Mayfield and Poole. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+    function toggleMenu() {
+        const dropdown = document.getElementById('dropdown-menu');
+        dropdown.classList.toggle('open'); // Add or remove the 'open' class
+    }
+    </script>
+</body>
+</html>

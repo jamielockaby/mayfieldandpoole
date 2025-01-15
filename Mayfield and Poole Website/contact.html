@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayfield and Poole Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <div id="page-container">
+        <header>
+            <img src="images/Logo.jpg" id="logo" alt="Mayfield and Poole Logo">
+            <nav id="nav-menu">
+                <a href="main.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <img src="images/menu.png" id="menu-button" alt="Menu" onclick="toggleMenu()">
+            <div id="dropdown-menu">
+                <nav>
+                    <a href="main.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section>
+                <h2>Contact</h2>
+                <p>(770) - 464 - 3287</p>
+                <p>to request an estimate or schedule a service.</p>
+            </section>
+                    <!-- Add the Google Maps container -->
+        <s2>
+            <h3>Our Location</h3>
+            <p>Social Circle and the greater area</p>
+            <div id="map" style="height: 300px;"></div>
+        </s2>
+
+        <script>
+            function initMap() {
+                // Specify the coordinates for Social Circle, Georgia
+                const socialCircle = { lat: 33.6562, lng: -83.7185 };
+
+                // Create the map centered on Social Circle
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 10, // Set zoom level to display the city area
+                    center: socialCircle, // Center the map on Social Circle
+                });
+
+                // No marker is added in this version
+            }
+        </script>
+
+        <!-- Load Google Maps API script with the callback -->
+        <script async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAw2h3B8UZILyAJ8-oPnyNBls4ONm8L7sw&callback=initMap">
+        </script>
+
+        </main>
+        <footer>
+            <p>&copy; 2025 Mayfield and Poole. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+    function toggleMenu() {
+        const dropdown = document.getElementById('dropdown-menu');
+        dropdown.classList.toggle('open'); // Add or remove the 'open' class
+    }
+    </script>
+</body>
+
+</html>
